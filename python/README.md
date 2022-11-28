@@ -1,6 +1,8 @@
 # Python documentation 
 
-Setup.cfg
+My journey of reverse engineering of a program written in Python.
+
+## Setup.cfg
 > Providing a configuration file, setup.cfg, for users to edit is a cheap and easy way to solicit it. Configuration files also let you provide default values for any command option, which the installer can then override either on the command-line or by editing the config file.
 
 ```
@@ -42,4 +44,28 @@ console_scripts =
     PkgName-functionDoSomething2 = PkgName.run_function2:start
     PkgName-functionDoSomething3 = PkgName.run_function3:start
 ```
+
+## Modules 
+
+### argparser
+
+The argparse module makes it easy to write user-friendly command-line interfaces. The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. The argparse module also automatically generates help and usage messages. The module will also issue errors when users give the program invalid arguments.
+
+```
+parser = argparse.ArgumentParser(
+                    prog = 'ProgramName',
+                    description = 'What the program does',
+                    epilog = 'Text at the bottom of help')
+
+parser.add_argument('filename')           # positional argument
+parser.add_argument('-c', '--count')      # option that takes a value
+parser.add_argument('-v', '--verbose',
+                    action='store_true')  # on/off flag
+
+args = parser.parse_args()
+print(args.filename, args.count, args.verbose)
+```
+
+> It's like writing a command line function that takes args in Windows.
+
 
