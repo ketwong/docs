@@ -45,6 +45,12 @@ console_scripts =
     PkgName-functionDoSomething3 = PkgName.run_function3:start
 ```
 
+> On the script file, we will just need to add at the end of the file for setup.cfg to call:
+```
+if __name__ == "__main__":
+    start()
+```
+
 ## Modules 
 
 ### argparser
@@ -67,5 +73,15 @@ print(args.filename, args.count, args.verbose)
 ```
 
 > It's like writing a command line function that takes args in Windows.
+
+
+## Custom Modules
+
+### makeapirequest
+
+
+
+
+## 
 
 
